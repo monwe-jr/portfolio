@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <section className='section contact center' id='contact'>
       <div className='contact__wrapper'>
-        <h2 className='section__title'>Let&apos;s Build Something Amazing</h2>
+        <h2 className='section__title'>Reach Out</h2>
         
         <p className='contact__description'>
           Looking for a developer who can create high-performance, interactive web experiences?
