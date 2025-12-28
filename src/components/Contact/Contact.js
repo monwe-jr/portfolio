@@ -1,19 +1,143 @@
+import { useState } from 'react';
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import EmailIcon from '@material-ui/icons/Email'         
+import LocationOnIcon from '@material-ui/icons/LocationOn' 
+import DescriptionIcon from '@material-ui/icons/Description' 
 import { contact } from '../../portfolio'
-import './Contact.css'
+import './Contact.css';
 
 const Contact = () => {
-  if (!contact.email) return null
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const { email, resume, location, linkedin, github } = contact
+
+  const handleSubmit = () => {
+    if (formData.name && formData.email && formData.message) {
+      const mailtoLink = `mailto:${email}?subject=Portfolio Contact&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+      window.location.href = mailtoLink;
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   return (
     <section className='section contact center' id='contact'>
-      <h2 className='section__title'>Contact</h2>
-      <a href={`mailto:${contact.email}`}>
-        <span type='button' className='btn btn--outline'>
-          Email me
-        </span>
-      </a>
-    </section>
-  )
-}
+      <div className='contact__wrapper'>
+        <h2 className='section__title'>Let&apos;s Build Something Amazing</h2>
+        
+        <p className='contact__description'>
+          Looking for a developer who can create high-performance, interactive web experiences?
+        </p>
 
-export default Contact
+        <div className='contact__location'>
+          <LocationOnIcon />
+          <span>{location}</span>
+        </div>
+
+        <div className='contact__form'>
+          <div className='form__group'>
+            <label htmlFor='name' className='form__label'>
+              Name
+              <input
+                type='text'
+                id='name'
+                name='name'
+                value={formData.name}
+                onChange={handleChange}
+                className='form__input'
+              />
+            </label>
+          </div>
+
+          <div className='form__group'>
+            <label htmlFor='email' className='form__label'>
+              Email
+              <input
+                type='email'
+                id='email'
+                name='email'
+                value={formData.email}
+                onChange={handleChange}
+                className='form__input'
+              />
+            </label>
+          </div>
+
+          <div className='form__group'>
+            <label htmlFor='message' className='form__label'>
+              Message
+              <textarea
+                id='message'
+                name='message'
+                value={formData.message}
+                onChange={handleChange}
+                rows='5'
+                className='form__textarea'
+              />
+            </label>
+          </div>
+
+          <button
+            type='button'
+            onClick={handleSubmit}
+            className='btn btn--gradient'
+          >
+            Send Message
+          </button>
+        </div>
+
+        <a
+          href={resume}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='btn btn--outline contact__resume'
+        >
+          <DescriptionIcon />
+          View Resume
+        </a>
+
+        <div className='contact__social'>
+          <a
+            href={`mailto:${email}`}
+            aria-label='email'
+            className='link link--icon'
+          >
+            <EmailIcon />
+          </a>
+
+          <a
+            href={github}
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='github'
+            className='link link--icon'
+          >
+            <GitHubIcon />
+          </a>
+
+          <a
+            href={linkedin}
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='linkedin'
+            className='link link--icon'
+          >
+            <LinkedInIcon />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
