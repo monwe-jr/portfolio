@@ -1,12 +1,69 @@
+/* Container for the category headers */
+.skills__header-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem; /* Increased spacing to look more like headers */
+  margin-bottom: 3rem;
+}
+
+/* Reset button styles to look like text headers */
+.skills__header-nav button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Base style for the headers */
+.skills__header-nav .link--nav {
+  color: var(--clr-fg);
+  text-transform: uppercase; /* Makes them look more like section headers */
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* The Animated Underline logic from your sample */
+.skills__header-nav .link::before {
+  content: '';
+  display: inline;
+  width: 0%;
+  height: 0.2em;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--clr-primary);
+  transition: width 0.2s ease-in;
+}
+
+/* Keep the line visible for the Active Category */
+.skills__header-nav .link.active::before {
+  width: 100%;
+}
+
+/* Change text color of the active category to the primary theme color */
+.skills__header-nav .link.active {
+  color: var(--clr-primary);
+}
+
+/* Hover effect for inactive headers */
+.skills__header-nav .link:hover::before {
+  width: 100%;
+}
+
+/* Skill Grid adjustment */
 .skills__list {
-  max-width: 450px;
-  width: 95%;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  list-style: none;
+  padding: 0;
 }
 
 .skills__list-item {
-  margin: 0.5em;
+  margin: 0.6rem;
 }
