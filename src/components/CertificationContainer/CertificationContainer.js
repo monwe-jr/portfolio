@@ -4,7 +4,7 @@ const CertificationContainer = ({ certification }) => (
   <div className='certification'>
     {certification.badge && (
       <img 
-        src={certification.badge} 
+        src={process.env.PUBLIC_URL + certification.badge} 
         alt={`${certification.name} badge`} 
         className='certification__badge' 
       />

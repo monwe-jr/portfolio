@@ -18,6 +18,8 @@
 }
 
 .certification__badge {
+  background: transparent !important; 
+  background-image: none !important;
   width: 110px;
   height: 110px;
   margin-bottom: 1.5rem;
@@ -28,7 +30,6 @@
 
 .certification__header {
   margin-bottom: 0.5rem;
-  /* Ensures headers align even if titles are different lengths */
   min-height: 70px; 
   display: flex;
   flex-direction: column;
@@ -49,19 +50,18 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 600;
-  background: transparent !important; /* Fixes "weird" text background */
+  background: transparent !important; 
 }
 
 .certification__date {
   font-size: 0.85rem;
   color: var(--clr-fg-alt);
   margin-bottom: 1rem;
-  background: transparent !important; /* Fixes "weird" text background */
+  background: transparent !important; 
 }
 
-/* THE FIX: Refined Credential Box Styling */
 .certification__credential-box {
-  background: rgba(255, 255, 255, 0.04); /* Very faint background */
+  background: rgba(255, 255, 255, 0.04); 
   padding: 1rem 0.75rem;
   border-radius: 8px;
   width: 100%;
@@ -79,7 +79,7 @@
   margin-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: transparent !important; /* Ensures label has no weird highlight */
+  background: transparent !important; 
 }
 
 .certification__credential {
@@ -89,13 +89,12 @@
   word-break: break-all;
   margin: 0;
   line-height: 1.4;
-  background: transparent !important; /* THE CRITICAL FIX: Removes the problematic text highlight */
+  background: transparent !important; 
   padding: 0;
 }
 
-/* Button Alignment Fix */
 .certification__link {
-  margin-top: auto; /* Pushes button to bottom */
+  margin-top: auto; 
   padding: 0.7rem 1.5rem;
   border: 1px solid var(--clr-primary);
   border-radius: 4px;
