@@ -1,0 +1,56 @@
+.certification {
+  padding: 2em;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-radius: 1em;
+  background-color: var(--clr-bg-alt);
+  transition: transform 0.2s linear;
+}
+
+.certification:hover {
+  transform: translateY(-7px);
+}
+
+.certification__header {
+  margin-bottom: 1em;
+}
+
+.certification__name {
+  margin-bottom: 0.5em;
+  color: var(--clr-fg-alt);
+  font-weight: 600;
+}
+
+.certification__issuer {
+  color: var(--clr-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.5em;
+}
+
+.certification__date {
+  color: var(--clr-fg);
+  font-size: 0.85rem;
+  margin-bottom: 0.75em;
+}
+
+.certification__credential {
+  color: var(--clr-fg);
+  font-size: 0.8rem;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+.certification__link {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: var(--clr-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.certification__link:hover {
+  color: var(--clr-fg-alt);
+}
