@@ -133,21 +133,24 @@ const certifications = [
     issuer: 'Amazon Web Services',
     date: 'May 2025',
     credentialId: 'e32082421d664e09a3526ae5dfa3c1ab',
-    link: 'https://aws.amazon.com/verification?code=e32082421d664e09a3526ae5dfa3c1ab' 
+    badge: '/images/certifications/aws-certified-developer.png',
+    link: 'https://cp.certmetrics.com/amazon/en/public/verify/credential/e32082421d664e09a3526ae5dfa3c1ab'
   },
   {
     name: 'AWS Certified Solutions Architect - Associate',
     issuer: 'Amazon Web Services',
     date: 'August 2024',
     credentialId: '67f066a6d89d47a8b6c4beb8d47f2e22',
-    link: 'https://aws.amazon.com/verification?code=67f066a6d89d47a8b6c4beb8d47f2e22'
+    badge: '/images/certifications/aws-solutions-architect.png',
+    link: 'https://cp.certmetrics.com/amazon/en/public/verify/credential/67f066a6d89d47a8b6c4beb8d47f2e22',
   },
   {
-    name: 'AWS Certified Cloud Practitioner',
+    name: 'AWS Certified Cloud Practitioner - Foundational',
     issuer: 'Amazon Web Services',
     date: 'May 2024',
     credentialId: 'ff42c7fd237e4d22897a4c175507fe64',
-    link: 'https://aws.amazon.com/verification?code=ff42c7fd237e4d22897a4c175507fe64'
+    badge: '/images/certifications/aws-cloud-practitioner.png',
+    link: 'https://cp.certmetrics.com/amazon/en/public/verify/credential/ff42c7fd237e4d22897a4c175507fe64'
   }
 ]
 
@@ -176,7 +179,7 @@ const experience = [
       'Designed responsive UI with search, dropdowns, and navigation features enabling seamless content editing',
       'Maintained Git/Jira/Miro workflow, streamlining team collaboration and project management'
     ],
-    stack: ['SvelteKit', 'JavaScript', 'Git', 'Jira', 'Miro', 'Responsive Design']
+    stack: ['SvelteKit', 'JavaScript', 'Git', 'Jira', 'Miro']
   }
 ]
 
