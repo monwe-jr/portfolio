@@ -2,6 +2,14 @@ import './CertificationContainer.css'
 
 const CertificationContainer = ({ certification }) => (
   <div className='certification'>
+    {certification.badge && (
+      <img 
+        src={certification.badge} 
+        alt={`${certification.name} badge`} 
+        className='certification__badge' 
+      />
+    )}
+
     <div className='certification__header'>
       <h3 className='certification__name'>{certification.name}</h3>
       {certification.issuer && (
@@ -14,9 +22,10 @@ const CertificationContainer = ({ certification }) => (
     )}
 
     {certification.credentialId && (
-      <p className='certification__credential'>
-        Credential ID: {certification.credentialId}
-      </p>
+      <div className='certification__credential-box'>
+        <span className='credential-label'>Credential ID:</span>
+        <p className='certification__credential'>{certification.credentialId}</p>
+      </div>
     )}
 
     {certification.link && (
@@ -24,10 +33,9 @@ const CertificationContainer = ({ certification }) => (
         href={certification.link}
         target='_blank'
         rel='noopener noreferrer'
-        className='link link--icon certification__link'
-        aria-label='certification link'
+        className='certification__link'
       >
-        View Credential
+        Verify Credential
       </a>
     )}
   </div>

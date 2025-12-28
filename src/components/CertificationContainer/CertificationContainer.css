@@ -1,56 +1,113 @@
 .certification {
-  padding: 2em;
-  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  background-color: #1d212b; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  box-shadow: var(--shadow);
-  border-radius: 1em;
-  background-color: var(--clr-bg-alt);
-  transition: transform 0.2s linear;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%; 
 }
 
 .certification:hover {
-  transform: translateY(-7px);
+  transform: translateY(-10px);
+  border-color: var(--clr-primary);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.certification__badge {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(144, 160, 217, 0.15));
+  flex-shrink: 0; 
 }
 
 .certification__header {
-  margin-bottom: 1em;
+  margin-bottom: 0.5rem;
+  /* Ensures headers align even if titles are different lengths */
+  min-height: 70px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .certification__name {
-  margin-bottom: 0.5em;
-  color: var(--clr-fg-alt);
-  font-weight: 600;
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .certification__issuer {
   color: var(--clr-primary);
-  font-weight: 500;
-  font-size: 0.9rem;
-  margin-bottom: 0.5em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  background: transparent !important; /* Fixes "weird" text background */
 }
 
 .certification__date {
-  color: var(--clr-fg);
   font-size: 0.85rem;
-  margin-bottom: 0.75em;
+  color: var(--clr-fg-alt);
+  margin-bottom: 1rem;
+  background: transparent !important; /* Fixes "weird" text background */
+}
+
+/* THE FIX: Refined Credential Box Styling */
+.certification__credential-box {
+  background: rgba(255, 255, 255, 0.04); /* Very faint background */
+  padding: 1rem 0.75rem;
+  border-radius: 8px;
+  width: 100%;
+  margin: 1rem 0 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.credential-label {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--clr-fg-alt);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: transparent !important; /* Ensures label has no weird highlight */
 }
 
 .certification__credential {
-  color: var(--clr-fg);
-  font-size: 0.8rem;
-  margin-bottom: 1em;
-  font-style: italic;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #fff;
+  word-break: break-all;
+  margin: 0;
+  line-height: 1.4;
+  background: transparent !important; /* THE CRITICAL FIX: Removes the problematic text highlight */
+  padding: 0;
 }
 
+/* Button Alignment Fix */
 .certification__link {
-  display: inline-block;
-  margin-top: 0.5em;
-  color: var(--clr-primary);
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
+  margin-top: auto; /* Pushes button to bottom */
+  padding: 0.7rem 1.5rem;
+  border: 1px solid var(--clr-primary);
+  border-radius: 4px;
+  color: var(--clr-primary) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  width: fit-content;
 }
 
 .certification__link:hover {
-  color: var(--clr-fg-alt);
+  background: var(--clr-primary);
+  color: #fff !important;
 }
