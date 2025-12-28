@@ -4,10 +4,11 @@
   text-align: center;
 }
 
-.footer__link {
+.footer__text {
   font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--clr-fg);
+  color: #555; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 600px) {
