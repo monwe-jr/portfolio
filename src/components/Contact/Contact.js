@@ -1,42 +1,45 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import EmailIcon from '@material-ui/icons/Email'         
-import LocationOnIcon from '@material-ui/icons/LocationOn' 
-import DescriptionIcon from '@material-ui/icons/Description' 
+import EmailIcon from '@material-ui/icons/Email'
+import LocationOnIcon from '@material-ui/icons/LocationOn'
+import DescriptionIcon from '@material-ui/icons/Description'
 import { contact } from '../../portfolio'
-import './Contact.css';
+import './Contact.css'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
-  });
+  })
 
   const { email, resume, location, linkedin, github } = contact
-
-  const handleSubmit = () => {
-    if (formData.name && formData.email && formData.message) {
-      const mailtoLink = `mailto:${email}?subject=Portfolio Contact&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-      window.location.href = mailtoLink;
-    }
-  };
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (formData.name && formData.email && formData.message) {
+      const mailtoLink = `mailto:${email}?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`
+      window.location.href = mailtoLink
+    }
+  }
 
   return (
     <section className='section contact center' id='contact'>
       <div className='contact__wrapper'>
         <h2 className='section__title'>Reach Out</h2>
         
-        <p className='contact__description'>
-          Looking for a developer who can create high-performance, interactive web experiences?
+        <p className="contact__description">
+          Looking for a software engineer focused on performance, reliability, and building efficient systems across software and hardware?
         </p>
 
         <div className='contact__location'>
@@ -44,7 +47,7 @@ const Contact = () => {
           <span>{location}</span>
         </div>
 
-        <div className='contact__form'>
+        <form className='contact__form' onSubmit={handleSubmit}>
           <div className='form__group'>
             <label htmlFor='name' className='form__label'>
               Name
@@ -52,6 +55,7 @@ const Contact = () => {
                 type='text'
                 id='name'
                 name='name'
+                required
                 value={formData.name}
                 onChange={handleChange}
                 className='form__input'
@@ -66,6 +70,7 @@ const Contact = () => {
                 type='email'
                 id='email'
                 name='email'
+                required
                 value={formData.email}
                 onChange={handleChange}
                 className='form__input'
@@ -79,6 +84,7 @@ const Contact = () => {
               <textarea
                 id='message'
                 name='message'
+                required
                 value={formData.message}
                 onChange={handleChange}
                 rows='5'
@@ -87,57 +93,35 @@ const Contact = () => {
             </label>
           </div>
 
-          <button
-            type='button'
-            onClick={handleSubmit}
-            className='btn btn--gradient'
-          >
-            Send Message
+          <button type='submit' className='btn btn--gradient'>
+            send message
           </button>
-        </div>
+        </form>
 
         <a
-          href={resume}
+          href={`${process.env.PUBLIC_URL}${resume}`}
           target='_blank'
           rel='noopener noreferrer'
           className='btn btn--outline contact__resume'
         >
           <DescriptionIcon />
-          View Resume
+          view resume
         </a>
 
         <div className='contact__social'>
-          <a
-            href={`mailto:${email}`}
-            aria-label='email'
-            className='link link--icon'
-          >
+          <a href={`mailto:${email}`} aria-label='email' className='link link--icon'>
             <EmailIcon />
           </a>
-
-          <a
-            href={github}
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='github'
-            className='link link--icon'
-          >
+          <a href={github} target='_blank' rel='noopener noreferrer' aria-label='github' className='link link--icon'>
             <GitHubIcon />
           </a>
-
-          <a
-            href={linkedin}
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='linkedin'
-            className='link link--icon'
-          >
+          <a href={linkedin} target='_blank' rel='noopener noreferrer' aria-label='linkedin' className='link link--icon'>
             <LinkedInIcon />
           </a>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
