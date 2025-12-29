@@ -17,8 +17,8 @@ const ExperienceContainer = ({ job }) => (
 
     {job.description && (
       <ul className='experience__description'>
-        {job.description.map((item, index) => (
-          <li key={index}>{item}</li>
+        {job.description.map((item) => (
+          <li key={item}>{item}</li>
         ))}
       </ul>
     )}
