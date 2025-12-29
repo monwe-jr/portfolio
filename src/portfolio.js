@@ -5,51 +5,21 @@ const header = {
 }
 
 const about = {
-  // all the properties are optional - can be left empty or deleted
   name: 'Francis Monwe',
-  role: 'Software Engineer',
+  role: 'Software Engineer — Systems & Hardware Integration',
   picture: 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
 
-  description:
-    `I am a Software Engineer specializing in the integration of high-performance software with complex hardware systems. 
-    Currently, as an Intern at Avicena Tech, I focus on Python-based tool development for ASIC testing, firmware validation for STM32, 
-    and optimizing software-hardware middleware to reduce latency. With a Bachelor of Science in Computer Science and dual AWS Associate certifications, 
-    I combine strong algorithmic foundations with cloud architecture expertise. I am passionate about building secure, scalable applications—whether 
-    I am architecting dual-bucket S3 web apps in the cloud or refactoring SPI communication algorithms for optical hardware.`,
+  description: `
+I am a Software Engineer focused on building performant, reliable systems that bridge software and hardware.
+At Avicena Tech, I develop Python-based tooling for ASIC testing, automate STM32 firmware validation, and
+optimize software–hardware middleware to reduce latency and improve system stability.
+
+I enjoy working close to the metal—validating interfaces, refactoring communication protocols, and
+building developer tools that support complex hardware bring-up in real-world environments.
+`,
 }
 
 const projects = [
-  {
-    name: 'Interactive Chess Application',
-    description:
-      'A competitive chess application built for the Brock Chess Club to support player training and competitive preparation. Features a custom rule-based engine, graphical interface, and AI opponent.',
-    stack: [
-      'Java',
-      'Java Swing',
-      'AI',
-      'Minimax',
-      'Alpha-Beta Pruning'
-    ],
-    sourceCode: 'https://github.com/monwe-jr/Interactive-timeline-web-application',
-    livePreview: null,
-    image: 'chess-app.png',
-  },
-  {
-    name: 'E-commerce Application',
-    description:
-      'A responsive MERN stack eCommerce platform with RESTful APIs, dynamic product management, and an administrative dashboard for inventory control.',
-    stack: [
-      'MongoDB',
-      'Express.js',
-      'React',
-      'Node.js',
-      'JavaScript',
-      'CSS'
-    ],
-    sourceCode: 'https://github.com/monwe-jr/ecommerce-app',
-    livePreview: null,
-    image: 'ecommerce-app.png',
-  },
   {
     name: 'AWS S3 Web Application',
     description:
@@ -63,8 +33,59 @@ const projects = [
       'JavaScript'
     ],
     sourceCode: 'https://github.com/monwe-jr/static-aws-S3-react-application',
+    livePreview: 'https://www.awsfrancismonwesimongame.com/',
+    image: '/images/projects/s3-hosted-app.png',
+  },
+  {
+    name: 'Interactive Museum Timeline',
+    description:
+      `Collaborated with a team of 7 developers to build a cross-platform interactive museum timeline featuring a responsive search bar, 
+      dynamic page navigation, editable timeline elements, and real-time event handling.`,
+    stack: [
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'SvelteKit',
+      'Node.js',
+      'Vite',
+      'Git'
+    ],
+    sourceCode: 'https://github.com/monwe-jr/Interactive-timeline-web-application',
+    livePreview: 'https://museumtimeline.vercel.app/',
+    image: '/images/projects/interactive-timeline-app.png',
+  },
+  {
+    name: 'Interactive Chess Application',
+    description:
+      `A competitive chess application built for the Brock Chess Club to support player training and competitive preparation. 
+      Features a custom rule-based engine, graphical interface, and AI opponent.`,
+    stack: [
+      'Java',
+      'Java Swing',
+      'AI',
+      'Minimax',
+      'Alpha-Beta Pruning'
+    ],
+    sourceCode: 'https://github.com/monwe-jr/Chess-',
     livePreview: null,
-    image: 'aws-s3-app.png',
+    image: 'chess-app.png',
+  },
+  {
+    name: 'E-commerce Application',
+    description:
+      `A responsive MERN stack eCommerce platform with RESTful APIs, dynamic product management, 
+      and an administrative dashboard for inventory control.`,
+    stack: [
+      'MongoDB',
+      'Express.js',
+      'React',
+      'Node.js',
+      'JavaScript',
+      'CSS'
+    ],
+    sourceCode: 'https://github.com/monwe-jr/ecommerce-app',
+    livePreview: null,
+    image: 'ecommerce-app.png',
   },
 ]
 
@@ -121,7 +142,7 @@ const skills = {
 
 const contact = {
   email: 'monwefrancis@live.com',
-  resume: 'https://example.com',
+  resume: '/Francis_Monwe.pdf',
   location: "Mountain View, CA",
   linkedin: 'https://www.linkedin.com/in/francis-monwe-674501198',
   github: 'https://github.com/monwe-jr',
