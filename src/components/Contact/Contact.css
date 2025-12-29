@@ -29,6 +29,8 @@
 /* Form */
 .contact__form {
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .form__group {
@@ -71,6 +73,44 @@
   min-height: 120px;
 }
 
+/* Status Messages (Success/Error) */
+.form__status {
+  padding: 0.6rem 1rem;
+  margin: 1rem auto 0 auto; 
+  width: fit-content;       
+  min-width: 200px;         
+  max-width: 80%;           
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  animation: slideIn 0.4s ease forwards;
+  backdrop-filter: blur(4px);
+}
+
+.form__status.success {
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ed573;
+  border: 1px solid rgba(46, 213, 115, 0.3);
+}
+
+.form__status.error {
+  background: rgba(255, 71, 87, 0.1);
+  color: #ff4757;
+  border: 1px solid rgba(255, 71, 87, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Gradient Button */
 .btn--gradient {
   width: 100%;
@@ -83,19 +123,27 @@
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   text-transform: lowercase;
+  cursor: pointer;
 }
 
-.btn--gradient:hover {
+.btn--gradient:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(41, 120, 181, 0.3);
 }
 
+.btn--gradient:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.5);
+}
+
+/* Resume Button */
 .contact__resume.btn--outline {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-   margin: 2rem auto 2rem auto; 
+  margin: 2rem auto 2rem auto; 
   padding: 0.8rem 2rem;
   background: #1d212b; 
   color: #ffffff !important; 
@@ -107,25 +155,11 @@
   transition: all 0.3s ease;
 }
 
-/* Ensure text and icon remain white and sharp on hover */
 .contact__resume:hover {
   background: #252a36 !important; 
   color: #ffffff !important;      
   border-color: var(--clr-primary);
   transform: translateY(-2px);
-}
-
-/* Kill the dark box glitch and background issues */
-.contact__resume::before,
-.contact__resume::after {
-  content: none !important;
-  display: none !important;
-}
-
-.contact__resume svg {
-  background: transparent !important;
-  display: block;
-  margin: 0;
 }
 
 /* Social Icons */
@@ -138,6 +172,7 @@
 
 .contact__social .link--icon {
   transition: all 0.3s ease;
+  color: var(--clr-fg);
 }
 
 .contact__social .link--icon:hover {
