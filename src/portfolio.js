@@ -7,16 +7,24 @@ const header = {
 const about = {
   name: 'Francis Monwe',
   role: 'Software Engineer — Systems & Hardware Integration',
-  picture: 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
+  picture: 'https://avatars.githubusercontent.com/u/85851001?v=4',
 
   description: `
-I am a Software Engineer focused on building performant, reliable systems that bridge software and hardware.
-At Avicena Tech, I develop Python-based tooling for ASIC testing, automate STM32 firmware validation, and
-optimize software–hardware middleware to reduce latency and improve system stability.
+    I am a Software Engineer focused on building performant, reliable systems that bridge software and hardware.
+    At Avicena Tech, I develop Python-based tooling for ASIC testing, automate STM32 firmware validation, and
+    optimize software-hardware middleware to reduce latency and improve system stability.
 
-I enjoy working close to the metal—validating interfaces, refactoring communication protocols, and
-building developer tools that support complex hardware bring-up in real-world environments.
-`,
+    I enjoy working close to the metal—validating interfaces, refactoring communication protocols, and
+    building developer tools that support complex hardware bring-up in real-world environments.
+    `
+}
+
+const education = {
+  school: 'Brock University',
+  degree: 'B.Sc. (Honours) in Computer Science',
+  duration: '2019 - 2023',
+  gpa: '3.8/4.0',
+  status: 'Dean`s Honor List'
 }
 
 const projects = [
@@ -69,23 +77,6 @@ const projects = [
     sourceCode: 'https://github.com/monwe-jr/Chess-',
     livePreview: null,
     image: 'chess-app.png',
-  },
-  {
-    name: 'E-commerce Application',
-    description:
-      `A responsive MERN stack eCommerce platform with RESTful APIs, dynamic product management, 
-      and an administrative dashboard for inventory control.`,
-    stack: [
-      'MongoDB',
-      'Express.js',
-      'React',
-      'Node.js',
-      'JavaScript',
-      'CSS'
-    ],
-    sourceCode: 'https://github.com/monwe-jr/ecommerce-app',
-    livePreview: null,
-    image: 'ecommerce-app.png',
   },
 ]
 
@@ -205,4 +196,4 @@ const experience = [
 ]
 
 
-export { header, about, projects, skills, certifications, experience, contact }
+export { header, about, education, projects, skills, certifications, experience, contact }
