@@ -76,7 +76,7 @@ const projects = [
     ],
     sourceCode: 'https://github.com/monwe-jr/Chess-',
     livePreview: null,
-    image: 'chess-app.png',
+    image: '/images/projects/chess-app.png',
   },
 ]
 
