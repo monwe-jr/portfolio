@@ -31,7 +31,7 @@ const Navbar = () => {
           </li>
         ) : null}
 
-        {skills.length ? (
+        {Object.keys(skills).length ? (
           <li className='nav__list-item'>
             <a
               href='#skills'
