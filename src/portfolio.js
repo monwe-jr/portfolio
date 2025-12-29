@@ -27,6 +27,31 @@ const education = {
   status: 'Dean`s Honor List'
 }
 
+const experience = [
+  {
+    position: 'Software / Hardware Integration Intern',
+    company: 'Avicena Tech',
+    date: 'June 2025 - Present',
+    location: 'Sunnyvale, CA',
+    description: [
+      'Develop software tools that support ASIC bring-up, hardware validation, and firmware testing for next-generation optical interconnects.',
+      'Work closely with hardware and firmware teams to improve system reliability, performance, and validation workflows.'
+    ],
+    stack: ['Python', 'Embedded Systems', 'Hardware Validation']
+  },
+  {
+    position: 'Software Developer (Volunteer)',
+    company: 'Niagara-on-the-Lake Museum',
+    date: 'Jan 2023 - Apr 2023',
+    location: 'St. Catharines, ON',
+    description: [
+      'Built interactive software components for a cross-platform historical timeline application.',
+      'Collaborated with a small team using modern version control and project management tools.'
+    ],
+    stack: ['JavaScript', 'SvelteKit']
+  }
+]
+
 const projects = [
   {
     name: 'AWS S3 Web Application',
@@ -165,35 +190,5 @@ const certifications = [
     link: 'https://cp.certmetrics.com/amazon/en/public/verify/credential/ff42c7fd237e4d22897a4c175507fe64'
   }
 ]
-
-const experience = [
-  {
-    position: 'Software / Hardware Integration Intern',
-    company: 'Avicena Tech',
-    date: 'June 2025 - Present',
-    location: 'Sunnyvale, CA',
-    description: [
-      'Developed Python tools supporting next-generation microLED chip-to-chip communication bring-up, improving hardware validation workflows',
-      'Optimized Python-based GUI application, reducing memory footprint by 40% and CPU utilization by 35% for improved runtime performance',
-      'Validated middleware-firmware interfaces and power sequencing, ensuring ASIC register R/W compliance and system stability',
-      'Automated ASIC testing and STM32 firmware flashing on custom PCBs via Python, eliminating manual verification steps',
-      'Built FT232H USB-to-SPI utilities for Flash programming and analog-to-temperature conversion algorithms'
-    ],
-    stack: ['Python', 'STM32', 'SPI', 'GUI Development', 'Hardware Testing', 'Firmware']
-  },
-  {
-    position: 'Front-End Developer (Volunteer)',
-    company: 'Niagara-on-the-Lake Museum',
-    date: 'Jan 2023 - Apr 2023',
-    location: 'St. Catharines, ON',
-    description: [
-      'Developed reactive SvelteKit components for an interactive cross-platform timeline with real-time event handling',
-      'Designed responsive UI with search, dropdowns, and navigation features enabling seamless content editing',
-      'Maintained Git/Jira/Miro workflow, streamlining team collaboration and project management'
-    ],
-    stack: ['SvelteKit', 'JavaScript', 'Git', 'Jira', 'Miro']
-  }
-]
-
 
 export { header, about, education, projects, skills, certifications, experience, contact }
