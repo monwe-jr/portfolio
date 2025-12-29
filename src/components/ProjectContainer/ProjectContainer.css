@@ -1,33 +1,141 @@
 .project {
-  padding: 2em;
-  margin: 0 auto;
-  text-align: center;
+  background-color: var(--clr-bg-alt);
+  border-radius: 1rem;
+  overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.2s linear;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(144, 160, 217, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project:hover {
-  transform: translateY(-7px);
+  transform: translateY(-10px);
+  box-shadow: rgba(144, 160, 217, 0.2) 0px 20px 60px;
+  border-color: rgba(144, 160, 217, 0.3);
+}
+
+.project__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: var(--clr-bg-alt);
+  display: flex;
+  align-items: flex-start;
+}
+
+.project__image {
+  width: 100%;
+  height: 100%;
+  /* Using cover ensures the image fills the entire area with no white bars */
+  object-fit: cover;
+  /* This is the key fix: it anchors the image to the top so headers aren't cut off */
+  object-position: top; 
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project:hover .project__image {
+  transform: scale(1.05);
+}
+
+.project__image-overlay {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to top, var(--clr-bg-alt), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project__content {
+  padding: 1rem 1.75rem 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+.project__title {
+  color: var(--clr-fg-alt);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
 .project__description {
-  margin-top: 1em;
+  line-height: 1.6;
+  color: var(--clr-fg);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .project__stack {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 1.2em 0;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+  list-style: none;
 }
 
 .project__stack-item {
-  margin: 0.5em;
-  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  background-color: rgba(144, 160, 217, 0.15);
+  color: var(--clr-primary);
+  border-radius: 0.4rem;
   font-size: 0.8rem;
-  color: var(--clr-fg-alt);
+  font-weight: 500;
+  border: 1px solid rgba(144, 160, 217, 0.2);
+  transition: all 0.2s ease;
 }
 
-.project .link--icon {
-  margin-left: 0.5em;
+.project__stack-item:hover {
+  background-color: rgba(144, 160, 217, 0.25);
+  border-color: rgba(144, 160, 217, 0.4);
+  transform: translateY(-2px);
+}
+
+.project__links {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(144, 160, 217, 0.1);
+}
+
+.project__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--clr-fg);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.project__link:hover {
+  color: var(--clr-primary);
+}
+
+@media (max-width: 600px) {
+  .project__image-wrapper {
+    height: 180px;
+  }
+
+  .project__content {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .project__title {
+    font-size: 1.2rem;
+  }
 }

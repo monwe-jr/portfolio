@@ -5,50 +5,64 @@ import './ProjectContainer.css'
 
 const ProjectContainer = ({ project }) => (
   <div className='project'>
-
-    {project.image && (<img
-    src={
-      project.image.startsWith("http")
-        ? project.image
-        : `${process.env.PUBLIC_URL}/images/${project.image}`
-    }
-    alt={`${project.name} screenshot`}
-    style={{ width: '100%', objectFit: 'cover' }}
-    />
+    {/* Image Section */}
+    {project.image && (
+      <div className='project__image-wrapper'>
+        <img
+          src={
+            project.image.startsWith("http")
+              ? project.image
+              : `${process.env.PUBLIC_URL + project.image}`
+          }
+          alt={`${project.name} screenshot`}
+          className='project__image'
+        />
+        <div className='project__image-overlay' />
+      </div>
     )}
 
-    <h3>{project.name}</h3>
+    {/* Content Section */}
+    <div className='project__content'>
+      <h3 className='project__title'>{project.name}</h3>
 
-    <p className='project__description'>{project.description}</p>
-    {project.stack && (
-      <ul className='project__stack'>
-        {project.stack.map((item) => (
-          <li key={uniqid()} className='project__stack-item'>
-            {item}
-          </li>
-        ))}
-      </ul>
-    )}
+      <p className='project__description'>{project.description}</p>
 
-    {project.sourceCode && (
-      <a
-        href={project.sourceCode}
-        aria-label='source code'
-        className='link link--icon'
-      >
-        <GitHubIcon />
-      </a>
-    )}
+      {/* Tech Stack */}
+      {project.stack && (
+        <ul className='project__stack'>
+          {project.stack.map((item) => (
+            <li key={uniqid()} className='project__stack-item'>
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
 
-    {project.livePreview && (
-      <a
-        href={project.livePreview}
-        aria-label='live preview'
-        className='link link--icon'
-      >
-        <LaunchIcon />
-      </a>
-    )}
+      {/* Links */}
+      <div className='project__links'>
+        {project.sourceCode && (
+          <a
+            href={project.sourceCode}
+            aria-label='source code'
+            className='project__link'
+          >
+            <GitHubIcon />
+            <span>Code</span>
+          </a>
+        )}
+
+        {project.livePreview && (
+          <a
+            href={project.livePreview}
+            aria-label='live preview'
+            className='project__link'
+          >
+            <LaunchIcon />
+            <span>Live Demo</span>
+          </a>
+        )}
+      </div>
+    </div>
   </div>
 )
 
