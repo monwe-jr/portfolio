@@ -6,9 +6,8 @@ const About = () => {
   const { name, role, description, picture } = about;
   const { school, gpa, status } = education;
 
-  // Create an array of unique IDs once to avoid re-generating on every render
   const particles = React.useMemo(() => 
-    [...Array(200)].map(() => ({
+    [...Array(250)].map(() => ({
       id: Math.random().toString(36).substr(2, 9),
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
@@ -20,7 +19,7 @@ const About = () => {
     <div className='about-visual-root'>
       {particles.map((p) => (
         <div
-          key={p.id} // Fixed: Using a unique ID instead of the index
+          key={p.id}
           className="particle"
           style={{
             top: p.top,

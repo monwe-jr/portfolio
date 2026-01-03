@@ -45,7 +45,6 @@
   width: 400px;
   height: 400px;
   background: radial-gradient(circle, var(--clr-primary) 0%, transparent 70%);
-  /* Combined floating and pulsing animation */
   animation: drift 10s ease-in-out infinite; 
 }
 
