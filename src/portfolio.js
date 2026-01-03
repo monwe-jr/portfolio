@@ -10,12 +10,9 @@ const about = {
   picture: 'https://avatars.githubusercontent.com/u/85851001?v=4',
 
   description: `
-    I am a Software Engineer focused on building performant, reliable systems that bridge software and hardware.
-    At Avicena Tech, I develop Python-based tooling for ASIC testing, automate STM32 firmware validation, and
-    optimize software-hardware middleware to reduce latency and improve system stability.
-
-    I enjoy working close to the metal—validating interfaces, refactoring communication protocols, and
-    building developer tools that support complex hardware bring-up in real-world environments.
+    I'm a software engineer working at the intersection of software and hardware, focused on performance, reliability, and 
+    system validation. At Avicena Tech, I build Python tooling for ASIC testing, automate STM32 firmware validation, and optimize 
+    low-latency middleware used during hardware bring-up. My work supports production-critical systems where correctness and stability matter.
     `
 }
 
