@@ -16,7 +16,7 @@
 
 @media (max-width: 600px) {
   .nav__list {
-    display: none;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -24,16 +24,25 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 999; 
+    background-color: var(--clr-bg); 
+    gap: 2.5rem; 
   }
 
   .nav__list-item {
-    margin: 0.5em 0;
+    margin: 0; 
+  }
+
+  .nav__list-item a {
+    font-size: 1.8rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
   .app .nav__hamburger {
     display: flex;
-    z-index: 2;
-    margin-left: 0.8em;
+    z-index: 1000; 
+    position: relative; 
   }
 }
