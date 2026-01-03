@@ -1,66 +1,20 @@
-# Cleanfolio
+# Portfolio - Francis Monwe
 
-Cleanfolio is a portfolio template built with React. However, if you prefer a template built with HTML, CSS, and JavaScript, you can check out [Cleanfolio Minimal](https://github.com/rjshkhr/cleanfolio-minimal).
+My personal portfolio website built with React.
+
+## Credits
+This project was built using the [Cleanfolio](https://github.com/rjshkhr/cleanfolio) template by [rjshkhr](https://github.com/rjshkhr).
 
 ## Preview
+[Live Demo](https://monwe-jr.github.io/portfolio)
 
-[![Imgur](https://imgur.com/FwDMNEM.gif)](https://rjshkhr.github.io/cleanfolio)
+## Setup & Deployment
+To run locally:
+1. `yarn install`
+2. `yarn start`
 
-[Live Demo](https://rjshkhr.github.io/cleanfolio)
-
-## Instructions
-
-### Setup
-
-```shell
-git clone https://github.com/rjshkhr/cleanfolio
-cd cleanfolio
-```
-
-If you use [nvm](https://github.com/nvm-sh/nvm) or [fnm](https://github.com/Schniz/fnm), execute:
-
-```shell
-nvm install
-nvm use
-```
-
-Or:
-
-```shell
-fnm install
-fnm use
-```
-
-To install and launch the project, run these commands:
-
-```shell
-yarn
-yarn start
-```
-
-### How to Use
-
-- Open the `public/index.html` file and replace:
-
-`<title>John Smith</title>` with `<title>Your Name</title>`.
-
-- Open the `src/portfolio.js` file and make the necessary changes.
-
-- Optionally, you can add an image or logo for each project in two ways:
-  1. **Local image**
-     - Put your image inside the `public/images/` folder
-     - In `portfolio.js`, just use the file name:
-      ```js
-      image: "cleanfolio.png"
-      ```
-
-  2. **Web image**
-     - If your image is already hosted online, just paste the URL:
-     ```js
-     image: "https://example.com/my-logo.png"
-     ```
-
-
+To deploy to GitHub Pages:
+`npm run deploy`
 
 ### Deployment
 
