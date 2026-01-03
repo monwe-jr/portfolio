@@ -16,23 +16,6 @@ To run locally:
 To deploy to GitHub Pages:
 `npm run deploy`
 
-### Deployment
-
-- In the `package.json` file, update:
-
-`"homepage": "https://rjshkhr.github.io/cleanfolio"`
-
-to `"homepage": "https://yourusername.github.io"`.
-
-- Push the changes to your repository.
-
-- To build and deploy, run the following commands:
-
-```shell
-yarn build
-yarn deploy
-```
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
