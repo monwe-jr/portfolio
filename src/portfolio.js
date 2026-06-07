@@ -58,7 +58,7 @@ const projects = [
     description:
       "Designed, developed, and validated a concurrent task scheduler in C++ capable of dispatching 1,000+ prioritized tasks across a worker thread pool with zero failures or data races. Engineered a custom queue using atomic CPU instructions instead of locks, with delayed/recurring task support, real-time execution telemetry, and graceful exception isolation.",
     stack: ["C++", "Concurrency", "Atomics", "Multithreading"],
-    sourceCode: "https://github.com/monwe-jr",
+    sourceCode: "https://github.com/monwe-jr/Concurrent-Task-Scheduler",
     livePreview: null,
     image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500",
   },
@@ -76,7 +76,7 @@ const projects = [
       "DynamoDB",
       "STM32",
     ],
-    sourceCode: "https://github.com/monwe-jr",
+    sourceCode: "https://github.com/monwe-jr/Iot-Tracker",
     livePreview: null,
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop",
   },
