@@ -1,9 +1,11 @@
 import './Footer.css'
+import { footer } from '../../portfolio'
+
 
 const Footer = () => (
   <footer className='footer'>
     <p className='footer__text'>
-      Software Engineering Portfolio — 2025
+        {footer}
     </p>  
   </footer>
 )
