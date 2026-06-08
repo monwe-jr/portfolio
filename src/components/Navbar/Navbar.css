@@ -15,8 +15,12 @@
 }
 
 @media (max-width: 600px) {
+  .nav {
+    gap: 1.5rem;
+  }
+
   .nav__list {
-    display: flex; 
+    display: none; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
