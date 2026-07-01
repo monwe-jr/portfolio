@@ -26,7 +26,7 @@ const education = {
 
 const experience = [
   {
-    position: "Software / Hardware Integration Intern",
+    position: "Software System Hardware Integration",
     company: "Avicena Tech",
     date: "June 2025 - April 2026",
     location: "Sunnyvale, CA",
@@ -78,7 +78,8 @@ const projects = [
     ],
     sourceCode: "https://github.com/monwe-jr/Iot-Tracker",
     livePreview: null,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop",
   },
   {
     name: "AWS S3 Web Application",
@@ -195,7 +196,7 @@ const certifications = [
   },
 ];
 
-const footer = "Software Engineering Portfolio — 2026"
+const footer = "Software Engineering Portfolio — 2026";
 
 export {
   header,
