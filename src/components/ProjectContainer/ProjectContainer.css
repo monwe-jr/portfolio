@@ -1,19 +1,18 @@
 .project {
   background-color: var(--clr-bg-alt);
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(144, 160, 217, 0.1);
+  transition: all 0.25s ease;
+  border: 1px solid var(--clr-border);
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .project:hover {
-  transform: translateY(-10px);
-  box-shadow: rgba(144, 160, 217, 0.2) 0px 20px 60px;
-  border-color: rgba(144, 160, 217, 0.3);
+  transform: translateY(-4px);
+  border-color: var(--clr-primary);
 }
 
 .project__image-wrapper {

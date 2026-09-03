@@ -20,9 +20,8 @@
 /* Base style for the headers */
 .skills__header-nav .link--nav {
   color: var(--clr-fg);
-  text-transform: uppercase; /* Makes them look more like section headers */
   font-weight: 600;
-  letter-spacing: 1px;
+  font-family: var(--font-display);
 }
 
 /* The Animated Underline logic from your sample */

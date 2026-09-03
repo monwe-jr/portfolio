@@ -52,7 +52,7 @@
   width: 100%;
   padding: 0.875rem 1rem;
   background: var(--clr-bg-alt);
-  border: 1px solid var(--clr-fg-alt);
+  border: 1px solid var(--clr-border);
   border-radius: 0.5rem;
   color: var(--clr-fg);
   font-size: 1rem;
@@ -65,7 +65,7 @@
 .form__input:focus,
 .form__textarea:focus {
   border-color: var(--clr-primary);
-  box-shadow: 0 0 0 3px rgba(41, 120, 181, 0.1);
+  box-shadow: 0 0 0 3px rgba(var(--clr-primary-rgb), 0.15);
 }
 
 .form__textarea {
@@ -111,24 +111,24 @@
   }
 }
 
-/* Gradient Button */
+/* Primary CTA button */
 .btn--gradient {
   width: 100%;
-  background: linear-gradient(90deg, var(--clr-primary) 0%, #90a0d9 100%);
-  color: #fff;
+  background: var(--clr-primary);
+  color: var(--clr-bg);
+  font-family: var(--font-display);
   border: none;
   padding: 1rem 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
-  text-transform: lowercase;
   cursor: pointer;
 }
 
 .btn--gradient:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(41, 120, 181, 0.3);
+  box-shadow: 0 10px 20px rgba(var(--clr-primary-rgb), 0.3);
 }
 
 .btn--gradient:disabled {
@@ -137,28 +137,22 @@
   filter: grayscale(0.5);
 }
 
-/* Resume Button */
+/* Resume Button — layout only; color comes from .btn--outline so it stays
+   correctly themed in both light and dark mode. */
 .contact__resume.btn--outline {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  margin: 2rem auto 2rem auto; 
+  margin: 2rem auto 2rem auto;
   padding: 0.8rem 2rem;
-  background: #1d212b; 
-  color: #ffffff !important; 
-  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
-  text-decoration: none;
+  font-family: var(--font-display);
   position: relative;
   z-index: 1;
-  transition: all 0.3s ease;
 }
 
 .contact__resume:hover {
-  background: #252a36 !important; 
-  color: #ffffff !important;      
-  border-color: var(--clr-primary);
   transform: translateY(-2px);
 }
 
@@ -178,19 +172,6 @@
 .contact__social .link--icon:hover {
   color: var(--clr-primary);
   transform: translateY(-3px);
-}
-
-/* Dark Mode Adjustments */
-.dark .form__input,
-.dark .form__textarea {
-  background: var(--clr-bg-alt);
-  border-color: rgba(189, 189, 221, 0.3);
-}
-
-.dark .form__input:focus,
-.dark .form__textarea:focus {
-  border-color: var(--clr-primary);
-  box-shadow: 0 0 0 3px rgba(144, 160, 217, 0.1);
 }
 
 /* Responsive */

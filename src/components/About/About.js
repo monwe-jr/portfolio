@@ -1,4 +1,3 @@
-import React from 'react';
 import { about, education } from '../../portfolio';
 import './About.css';
 
@@ -6,75 +5,35 @@ const About = () => {
   const { name, role, description, picture } = about;
   const { school, gpa, status } = education;
 
-  const particles = React.useMemo(() => 
-    [...Array(250)].map(() => ({
-      id: Math.random().toString(36).substr(2, 9),
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      delay: `${Math.random() * 5}s`,
-      duration: `${2 + Math.random() * 3}s`
-    })), []);
-
   return (
-    <div className='about-visual-root'>
-      {particles.map((p) => (
-        <div
-          key={p.id}
-          className="particle"
-          style={{
-            top: p.top,
-            left: p.left,
-            animationDelay: p.delay, 
-            animationDuration: p.duration 
-          }}
-        />
-      ))}
-
-      <div className="bg-glow top-left" />
-      <div className="bg-glow bottom-right" />
-
-      <div className='about-container-wide'>
-        <div className='profile-visual-wrapper'>
-          <div className='ring-outer' />
-          <div className='ring-inner' />
-          <div className='glow-behind' />
-          <div className='profile-image-frame'>
-            <img
-              src={picture}
-              alt={name}
-              className='profile-img'
-            />
-          </div>
+    <section id='about' className='section about'>
+      <div className='about__container'>
+        <div className='about__image-wrapper'>
+          <img src={picture} alt={name} className='about__image' />
         </div>
 
-        <div className='content-side-wide'>
-          <h1 className='name-hero'>
-            Hi, I am <span className='gradient-text'>{name}</span>
-          </h1>
+        <div className='about__content'>
+          <h1 className='about__name'>{name}</h1>
+          <h2 className='about__role'>{role}</h2>
+          <p className='about__description'>{description}</p>
 
-          <h2 className='role-hero'>{role}</h2>
-
-          <p className='desc-hero'>{description}</p>
-
-          <div className='edu-bar-row'>
-            <div className='edu-unit'>
-              <span className='edu-label'>University</span>
-              <span className='edu-value'>{school}</span>
+          <div className='about__stats'>
+            <div className='about__stat'>
+              <span className='about__stat-label'>University</span>
+              <span className='about__stat-value'>{school}</span>
             </div>
-            <div className='edu-divider' />
-            <div className='edu-unit'>
-              <span className='edu-label'>GPA</span>
-              <span className='edu-value'>{gpa}</span>
+            <div className='about__stat'>
+              <span className='about__stat-label'>GPA</span>
+              <span className='about__stat-value'>{gpa}</span>
             </div>
-            <div className='edu-divider' />
-            <div className='edu-unit'>
-              <span className='edu-label'>Honors</span>
-              <span className='edu-value'>{status}</span>
+            <div className='about__stat'>
+              <span className='about__stat-label'>Honors</span>
+              <span className='about__stat-value'>{status}</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

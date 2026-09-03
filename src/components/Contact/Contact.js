@@ -132,7 +132,7 @@ const Contact = () => {
             className='btn btn--gradient' 
             disabled={isSending}
           >
-            {isSending ? 'sending...' : 'send message'}
+            {isSending ? 'Sending...' : 'Send Message'}
           </button>
 
           {/* Moved Status Messages UNDER the button */}
@@ -151,7 +151,7 @@ const Contact = () => {
           className='btn btn--outline contact__resume'
         >
           <DescriptionIcon />
-          view resume
+          View Resume
         </a>
 
         <div className='contact__social'>
