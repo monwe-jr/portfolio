@@ -82,15 +82,6 @@ const projects = [
       "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop",
   },
   {
-    name: "AWS S3 Web Application",
-    description:
-      "A static React application deployed on AWS using S3 and CloudFront with HTTPS, custom domain routing, and global content delivery.",
-    stack: ["AWS S3", "CloudFront", "Route 53", "ACM", "React", "JavaScript"],
-    sourceCode: "https://github.com/monwe-jr/static-aws-S3-react-application",
-    livePreview: "https://www.awsfrancismonwesimongame.com/",
-    image: "/images/projects/s3-hosted-app.png",
-  },
-  {
     name: "Interactive Museum Timeline",
     description: `Collaborated with a team of 7 developers to build a cross-platform interactive museum timeline featuring a responsive search bar, 
       dynamic page navigation, editable timeline elements, and real-time event handling.`,
@@ -164,7 +155,7 @@ const skills = {
 const contact = {
   email: "monwefrancis@live.com",
   resume: "/Francis_Monwe.pdf",
-  location: "Mountain View, CA",
+  location: "United States",
   linkedin: "https://www.linkedin.com/in/francis-monwe-674501198",
   github: "https://github.com/monwe-jr",
 };
@@ -176,7 +167,7 @@ const certifications = [
     date: "May 2025",
     credentialId: "e32082421d664e09a3526ae5dfa3c1ab",
     badge: "/images/certifications/aws-certified-developer.png",
-    link: "https://cp.certmetrics.com/amazon/en/public/verify/credential/e32082421d664e09a3526ae5dfa3c1ab",
+    link: "https://cp.certmetrics.com/amazon/en/public/verify/credential/67f066a6d89d47a8b6c4beb8d47f2e22",
   },
   {
     name: "AWS Certified Solutions Architect - Associate",
@@ -184,7 +175,7 @@ const certifications = [
     date: "August 2024",
     credentialId: "67f066a6d89d47a8b6c4beb8d47f2e22",
     badge: "/images/certifications/aws-solutions-architect.png",
-    link: "https://cp.certmetrics.com/amazon/en/public/verify/credential/67f066a6d89d47a8b6c4beb8d47f2e22",
+    link: "https://cp.certmetrics.com/amazon/en/public/verify/credential/e32082421d664e09a3526ae5dfa3c1ab",
   },
   {
     name: "AWS Certified Cloud Practitioner - Foundational",
