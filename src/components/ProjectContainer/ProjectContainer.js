@@ -1,9 +1,18 @@
+import { useState } from 'react'
 import uniqid from 'uniqid'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline'
+import VideoModal from '../VideoModal/VideoModal'
 import './ProjectContainer.css'
 
-const ProjectContainer = ({ project }) => (
+const resolveAssetPath = (path) =>
+  path.startsWith('http') ? path : `${process.env.PUBLIC_URL + path}`
+
+const ProjectContainer = ({ project }) => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+
+  return (
   <div className='project'>
     {/* Image Section */}
     {project.image && (
@@ -61,9 +70,31 @@ const ProjectContainer = ({ project }) => (
             <span>Live Demo</span>
           </a>
         )}
+
+        {project.video && (
+          <button
+            type='button'
+            aria-label='watch demo video'
+            className='project__link project__link--button'
+            onClick={() => setIsVideoOpen(true)}
+          >
+            <PlayCircleOutlineIcon />
+            <span>Watch Demo</span>
+          </button>
+        )}
       </div>
     </div>
+
+    {project.video && isVideoOpen && (
+      <VideoModal
+        title={project.name}
+        src={project.video}
+        poster={project.videoPoster ? resolveAssetPath(project.videoPoster) : undefined}
+        onClose={() => setIsVideoOpen(false)}
+      />
+    )}
   </div>
-)
+  )
+}
 
 export default ProjectContainer

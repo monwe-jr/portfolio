@@ -125,6 +125,14 @@
   color: var(--clr-primary);
 }
 
+.project__link--button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .project__image-wrapper {
     height: 180px;
