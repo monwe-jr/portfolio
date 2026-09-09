@@ -28,9 +28,7 @@
 .project__image {
   width: 100%;
   height: 100%;
-  /* Using cover ensures the image fills the entire area with no white bars */
   object-fit: cover;
-  /* This is the key fix: it anchors the image to the top so headers aren't cut off */
   object-position: top; 
   display: block;
   transition: transform 0.3s ease;

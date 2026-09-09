@@ -97,6 +97,7 @@
   justify-content: center;
   gap: 0.45rem;
   z-index: 2;
+  background-color: transparent;
 }
 
 .image-lightbox__dot {
