@@ -13,31 +13,17 @@ const resolveAssetPath = (path) =>
 const ProjectContainer = ({ project }) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
 
-  const hasCarousel = project.images?.length > 0
+  const images = project.images?.length > 0 ? project.images : [project.image].filter(Boolean)
+  const hasImages = images.length > 0
   const videoPoster =
     project.video && project.images?.length ? project.images[0] : undefined
 
   return (
   <div className='project'>
     {/* Image Section */}
-    {hasCarousel && (
+    {hasImages && (
       <div className='project__image-wrapper'>
-        <ProjectImageCarousel images={project.images} alt={project.name} />
-        <div className='project__image-overlay' />
-      </div>
-    )}
-
-    {!hasCarousel && project.image && (
-      <div className='project__image-wrapper'>
-        <img
-          src={
-            project.image.startsWith("http")
-              ? project.image
-              : `${process.env.PUBLIC_URL + project.image}`
-          }
-          alt={`${project.name} screenshot`}
-          className='project__image'
-        />
+        <ProjectImageCarousel images={images} alt={project.name} />
         <div className='project__image-overlay' />
       </div>
     )}
