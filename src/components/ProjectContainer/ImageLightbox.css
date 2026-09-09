@@ -61,6 +61,7 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
+  overflow: hidden;
   border: none;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -69,17 +70,21 @@
   z-index: 2;
 }
 
+.image-lightbox__arrow svg {
+  background-color: transparent;
+}
+
 .image-lightbox__arrow:hover,
 .image-lightbox__arrow:focus {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
 .image-lightbox__arrow--prev {
-  left: -0.5rem;
+  left: 1rem;
 }
 
 .image-lightbox__arrow--next {
-  right: -0.5rem;
+  right: 1rem;
 }
 
 .image-lightbox__dots {
