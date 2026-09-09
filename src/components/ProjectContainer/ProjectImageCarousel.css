@@ -64,6 +64,7 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+  overflow: hidden;
   border: none;
   background-color: rgba(0, 0, 0, 0.45);
   color: #fff;
@@ -71,6 +72,10 @@
   opacity: 0;
   transition: opacity 0.2s ease, background-color 0.2s ease;
   z-index: 2;
+}
+
+.project__carousel-arrow svg {
+  background-color: transparent;
 }
 
 .project__carousel:hover .project__carousel-arrow,
