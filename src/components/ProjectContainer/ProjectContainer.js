@@ -67,7 +67,7 @@ const ProjectContainer = ({ project }) => {
             className='project__link'
           >
             <LaunchIcon />
-            <span>Demo</span>
+            <span>Live Demo</span>
           </a>
         )}
 
@@ -79,7 +79,7 @@ const ProjectContainer = ({ project }) => {
             onClick={() => setIsVideoOpen(true)}
           >
             <PlayCircleOutlineIcon />
-            <span>Video</span>
+            <span>Video Preview</span>
           </button>
         )}
       </div>
