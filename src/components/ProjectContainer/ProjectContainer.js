@@ -79,7 +79,7 @@ const ProjectContainer = ({ project }) => {
             onClick={() => setIsVideoOpen(true)}
           >
             <PlayCircleOutlineIcon />
-            <span>Video Preview</span>
+            <span>Preview</span>
           </button>
         )}
       </div>
