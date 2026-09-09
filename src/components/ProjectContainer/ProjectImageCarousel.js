@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from 'react'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import ZoomInIcon from '@material-ui/icons/ZoomIn'
+import ImageLightbox from './ImageLightbox'
 import './ProjectImageCarousel.css'
 
 const AUTO_CYCLE_MS = 4500
@@ -14,6 +16,7 @@ const ProjectImageCarousel = ({ images, alt }) => {
   const [isHovered, setIsHovered] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
   const [manuallyPaused, setManuallyPaused] = useState(false)
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
   const goTo = useCallback(
     (next) => setIndex(((next % count) + count) % count),
@@ -47,6 +50,17 @@ const ProjectImageCarousel = ({ images, alt }) => {
     }
   }
 
+  const handleControlClick = (event, next) => {
+    event.stopPropagation()
+    handleManualNav(next)
+  }
+
+  const handleLightboxClose = (finalIndex) => {
+    setManuallyPaused(true)
+    setIndex(finalIndex)
+    setIsLightboxOpen(false)
+  }
+
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions -- hover/focus pause zone, not itself an interactive widget
     <div
@@ -72,13 +86,22 @@ const ProjectImageCarousel = ({ images, alt }) => {
         )
       })}
 
+      <button
+        type='button'
+        className='project__carousel-trigger'
+        aria-label={`enlarge ${alt} image`}
+        onClick={() => setIsLightboxOpen(true)}
+      >
+        <ZoomInIcon className='project__carousel-zoom-icon' />
+      </button>
+
       {count > 1 && (
         <>
           <button
             type='button'
             aria-label='previous image'
             className='project__carousel-arrow project__carousel-arrow--prev'
-            onClick={() => handleManualNav(index - 1)}
+            onClick={(event) => handleControlClick(event, index - 1)}
           >
             <ChevronLeftIcon />
           </button>
@@ -86,7 +109,7 @@ const ProjectImageCarousel = ({ images, alt }) => {
             type='button'
             aria-label='next image'
             className='project__carousel-arrow project__carousel-arrow--next'
-            onClick={() => handleManualNav(index + 1)}
+            onClick={(event) => handleControlClick(event, index + 1)}
           >
             <ChevronRightIcon />
           </button>
@@ -99,11 +122,20 @@ const ProjectImageCarousel = ({ images, alt }) => {
                 aria-label={`go to image ${i + 1}`}
                 aria-current={i === index}
                 className={`project__carousel-dot${i === index ? ' is-active' : ''}`}
-                onClick={() => handleManualNav(i)}
+                onClick={(event) => handleControlClick(event, i)}
               />
             ))}
           </div>
         </>
+      )}
+
+      {isLightboxOpen && (
+        <ImageLightbox
+          images={images}
+          alt={alt}
+          initialIndex={index}
+          onClose={handleLightboxClose}
+        />
       )}
     </div>
   )
