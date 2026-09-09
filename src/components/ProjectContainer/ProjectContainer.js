@@ -4,6 +4,7 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline'
 import VideoModal from '../VideoModal/VideoModal'
+import ProjectImageCarousel from './ProjectImageCarousel'
 import './ProjectContainer.css'
 
 const resolveAssetPath = (path) =>
@@ -12,10 +13,21 @@ const resolveAssetPath = (path) =>
 const ProjectContainer = ({ project }) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
 
+  const hasCarousel = project.images?.length > 0
+  const videoPoster =
+    project.video && project.images?.length ? project.images[0] : undefined
+
   return (
   <div className='project'>
     {/* Image Section */}
-    {project.image && (
+    {hasCarousel && (
+      <div className='project__image-wrapper'>
+        <ProjectImageCarousel images={project.images} alt={project.name} />
+        <div className='project__image-overlay' />
+      </div>
+    )}
+
+    {!hasCarousel && project.image && (
       <div className='project__image-wrapper'>
         <img
           src={
@@ -89,7 +101,7 @@ const ProjectContainer = ({ project }) => {
       <VideoModal
         title={project.name}
         src={project.video}
-        poster={project.videoPoster ? resolveAssetPath(project.videoPoster) : undefined}
+        poster={videoPoster ? resolveAssetPath(videoPoster) : undefined}
         onClose={() => setIsVideoOpen(false)}
       />
     )}

@@ -1,0 +1,89 @@
+.project__carousel {
+  position: absolute;
+  inset: 0;
+}
+
+.project__carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.project__carousel-image.is-active {
+  opacity: 1;
+}
+
+.project:hover .project__carousel-image.is-active {
+  transform: scale(1.05);
+}
+
+.project__carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  z-index: 2;
+}
+
+.project__carousel:hover .project__carousel-arrow,
+.project__carousel:focus-within .project__carousel-arrow {
+  opacity: 1;
+}
+
+.project__carousel-arrow:hover,
+.project__carousel-arrow:focus {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.project__carousel-arrow--prev {
+  left: 0.5rem;
+}
+
+.project__carousel-arrow--next {
+  right: 0.5rem;
+}
+
+.project__carousel-dots {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.project__carousel-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project__carousel-dot.is-active {
+  background-color: #fff;
+  transform: scale(1.2);
+}
