@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ZoomInIcon from '@material-ui/icons/ZoomIn'
@@ -17,6 +17,7 @@ const ProjectImageCarousel = ({ images, alt }) => {
   const [isFocused, setIsFocused] = useState(false)
   const [manuallyPaused, setManuallyPaused] = useState(false)
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+  const suppressNextFocusRef = useRef(false)
 
   const goTo = useCallback(
     (next) => setIndex(((next % count) + count) % count),
@@ -56,18 +57,30 @@ const ProjectImageCarousel = ({ images, alt }) => {
   }
 
   const handleLightboxClose = (finalIndex) => {
-    setManuallyPaused(true)
+    setIsHovered(false)
+    suppressNextFocusRef.current = true
+    setIsFocused(false)
+    if (finalIndex !== index) {
+      setManuallyPaused(true)
+    }
     setIndex(finalIndex)
     setIsLightboxOpen(false)
   }
 
+  const handleFocus = () => {
+    if (suppressNextFocusRef.current) {
+      suppressNextFocusRef.current = false
+      return
+    }
+    setIsFocused(true)
+  }
+
   return (
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions -- hover/focus pause zone, not itself an interactive widget
     <div
-      className='project__carousel'
+      className={`project__carousel${isHovered || isFocused ? ' is-active' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsFocused(true)}
+      onFocus={handleFocus}
       onBlur={() => setIsFocused(false)}
       onKeyDown={handleKeyDown}
     >

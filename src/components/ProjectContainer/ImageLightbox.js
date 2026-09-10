@@ -77,8 +77,12 @@ const ImageLightbox = ({ images, alt, initialIndex, onClose }) => {
   }
 
   return createPortal(
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div className='image-lightbox__overlay' onMouseDown={handleOverlayClick}>
+    <div
+      className='image-lightbox__overlay'
+      onMouseDown={handleOverlayClick}
+      onFocus={(event) => event.stopPropagation()}
+      onBlur={(event) => event.stopPropagation()}
+    >
       <div
         className='image-lightbox'
         role='dialog'
