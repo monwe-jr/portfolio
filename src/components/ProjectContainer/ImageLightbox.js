@@ -79,6 +79,7 @@ const ImageLightbox = ({ images, alt, initialIndex, onClose }) => {
   return createPortal(
     <div
       className='image-lightbox__overlay'
+      role='presentation'
       onMouseDown={handleOverlayClick}
       onFocus={(event) => event.stopPropagation()}
       onBlur={(event) => event.stopPropagation()}

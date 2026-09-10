@@ -78,6 +78,7 @@ const ProjectImageCarousel = ({ images, alt }) => {
   return (
     <div
       className={`project__carousel${isHovered || isFocused ? ' is-active' : ''}`}
+      role='presentation'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onFocus={handleFocus}
