@@ -36,6 +36,8 @@ const ProjectImageCarousel = ({ images, alt }) => {
 
   if (count === 0) return null
 
+  const isLightboxEnabled = images.every((src) => !src.startsWith('http'))
+
   const handleManualNav = (next) => {
     setManuallyPaused(true)
     goTo(next)
@@ -100,14 +102,16 @@ const ProjectImageCarousel = ({ images, alt }) => {
         )
       })}
 
-      <button
-        type='button'
-        className='project__carousel-trigger'
-        aria-label={`enlarge ${alt} image`}
-        onClick={() => setIsLightboxOpen(true)}
-      >
-        <ZoomInIcon className='project__carousel-zoom-icon' />
-      </button>
+      {isLightboxEnabled && (
+        <button
+          type='button'
+          className='project__carousel-trigger'
+          aria-label={`enlarge ${alt} image`}
+          onClick={() => setIsLightboxOpen(true)}
+        >
+          <ZoomInIcon className='project__carousel-zoom-icon' />
+        </button>
+      )}
 
       {count > 1 && (
         <>
@@ -143,7 +147,7 @@ const ProjectImageCarousel = ({ images, alt }) => {
         </>
       )}
 
-      {isLightboxOpen && (
+      {isLightboxEnabled && isLightboxOpen && (
         <ImageLightbox
           images={images}
           alt={alt}
