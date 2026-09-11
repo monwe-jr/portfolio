@@ -8,12 +8,7 @@ const about = {
   name: "Francis Monwe",
   role: "Software Engineer",
   picture: "https://avatars.githubusercontent.com/u/85851001?v=4",
-
-  description: `
-    I'm a software engineer working at the intersection of embedded systems and cloud edge software, focused on performance, reliability, and 
-    system validation. At Avicena Tech, I design and validate middleware-to-firmware interfaces, develop Python APIs for ASIC testing, 
-    and write technical documentation for production-critical systems where correctness and stability matter.
-    `,
+  description: `Software engineer focused on reliability and performance, from low-level firmware to full-stack systems.`,
 };
 
 const education = {
@@ -30,25 +25,22 @@ const experience = [
     company: "Avicena Tech",
     date: "June 2025 - April 2026",
     location: "Sunnyvale, CA",
-    description: [
-      "Designed and validated middleware-to-firmware interfaces and ASIC register operations by developing a custom Python API for embedded firmware interaction via FT232H (USB-to-SPI) bridges, improving interface reliability and reducing manual debugging time.",
-      "Developed and documented high-level Python software utilities to automate hardware bring-up protocols, enabling consistent deployment of ASIC test environments; collaborated with technician teams to gather requirements and validate functionality.",
-      "Designed, implemented, and unit-tested Python scripts to automate parametric sweeps and step-testing for multi-variable ASIC testing, collecting real-time telemetry to identify stable operating ranges.",
-      "Built and maintained internal pre-assembly validation tools to benchmark hardware performance, conducted code reviews and regression tests to ensure software quality, and identified component defects prior to the assembly stage.",
-      "Designed and automated a CI/CD pipeline using Git-based source code management to package and deploy Python applications across shared servers; wrote technical documentation for all deployment processes, reducing manual effort and improving consistency.",
-    ],
+    description: `At Avicena, I worked on the software behind validating microLED-based
+      optical interconnect chips: ultra-low-energy chip-to-chip links used
+      in AI/ML and HPC systems. My main contribution was a custom Python API
+      for ASIC communication over FT232H (USB-to-SPI) bridges, giving
+      engineers a reliable way to talk to firmware without needing to
+      manually debug low-level interface issues. That API fed into a
+      full-stack application with two modes: an engineering mode used
+      internally for ASIC characterization, and a demo mode now used to
+      showcase the technology to major tech companies evaluating it. Beyond
+      that, I automated the test infrastructure used to validate chips
+      before full system assembly, including parametric sweeps, telemetry
+      collection, and bring-up protocols, which made chip validation faster
+      and characterization data more reliable. I also set up CI/CD pipelines
+      to standardize how internal software tools were packaged and deployed
+      across different engineering teams.`,
     stack: ["Python", "C++", "Embedded Systems", "Hardware Validation"],
-  },
-  {
-    position: "Software Developer (Volunteer)",
-    company: "Niagara-on-the-Lake Museum",
-    date: "Jan 2023 - Apr 2023",
-    location: "St. Catharines, ON",
-    description: [
-      "Built interactive software components for a cross-platform historical timeline application.",
-      "Collaborated with a small team using modern version control and project management tools.",
-    ],
-    stack: ["JavaScript", "SvelteKit", "REST APIs"],
   },
 ];
 
