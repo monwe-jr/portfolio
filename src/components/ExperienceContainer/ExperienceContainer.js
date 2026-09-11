@@ -16,11 +16,7 @@ const ExperienceContainer = ({ job }) => (
     </div>
 
     {job.description && (
-      <ul className='experience__description'>
-        {job.description.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
+      <p className='experience__description'>{job.description}</p>
     )}
 
     {job.stack && (
