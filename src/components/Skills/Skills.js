@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import uniqid from 'uniqid'
-import { skills } from '../../portfolio'
+import { skills, categoryLabels } from '../../portfolio'
 import './Skills.css'
 
 const Skills = () => {
@@ -15,9 +15,6 @@ const Skills = () => {
     }
     return skills[activeCategory]
   }
-
-  const formatTitle = (text) => 
-    text.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase())
 
   return (
     <section className='section skills' id='skills'>
@@ -38,7 +35,7 @@ const Skills = () => {
             onClick={() => setActiveCategory(key)}
             className={`link link--nav ${activeCategory === key ? 'active' : ''}`}
           >
-            {formatTitle(key)}
+            {categoryLabels[key]}
           </button>
         ))}
       </div>

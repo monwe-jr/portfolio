@@ -150,6 +150,16 @@ const projects = [
   },
 ];
 
+const categoryLabels = {
+  languages: "Languages",
+  frameworks: "Frameworks",
+  tools: "Tools",
+  database: "Database",
+  ai_ml: "AI/ML",
+  aws: "AWS",
+  hardware: "Hardware",
+};
+
 const skills = {
   languages: [
     "C",
@@ -160,9 +170,16 @@ const skills = {
     "TypeScript",
     "HTML",
     "CSS",
+  ],
+  frameworks: [
     "React",
-    "SvelteKit",
     "Node.js",
+    "SvelteKit",
+    "Next.js",
+    "Express.js",
+    "FastAPI",
+    "PyQt6",
+    "pytest",
   ],
   tools: [
     "Git",
@@ -175,17 +192,15 @@ const skills = {
     "Figma",
     "Notion",
     "Miro",
+    "Vite",
   ],
-  backend: ["PostgreSQL", "Redis", "MongoDB", "Node.js"],
-  hardware: [
-    "Microcontrollers (Raspberry Pi, STM32)",
-    "Oscilloscopes",
-    "Logic Analyzers",
-    "Multimeters",
-    "Sensors",
+  database: ["PostgreSQL", "Redis", "MongoDB", "SQLite"],
+  ai_ml: [
+    "LLM Integration",
+    "RAG (Retrieval-Augmented Generation)",
+    "Vector Embeddings",
   ],
   aws: [
-    "CloudFormation",
     "CloudFront",
     "S3",
     "EC2",
@@ -197,6 +212,12 @@ const skills = {
     "DynamoDB",
     "RDS",
     "Certificate Manager",
+  ],
+  hardware: [
+    "Microcontrollers (Raspberry Pi, STM32)",
+    "Oscilloscopes",
+    "Logic Analyzers",
+    "Multimeters",
   ],
 };
 
@@ -243,6 +264,7 @@ export {
   education,
   projects,
   skills,
+  categoryLabels,
   certifications,
   experience,
   contact,
